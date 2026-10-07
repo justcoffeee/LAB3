@@ -1,0 +1,34 @@
+experiment,word1,word2,similarity,note
+main_dim50_win5,doctor,physician,0.9802,synonym medical top1
+main_dim50_win5,doctor,hospital,0.7070,related not synonym
+main_dim50_win5,cat,dog,0.9648,synonym-like pets
+main_dim50_win5,car,automobile,0.9292,synonym vehicles
+main_dim50_win5,king,queen,0.8436,related royalty
+main_dim50_win5,computer,banana,0.5320,unexpected high different domains
+main_dim50_win5,doctor,banana,0.2207,different domains low (from repeat20 seed42 run)
+win2_dim50,doctor,physician,0.9753,window2 synonym still high
+win2_dim50,doctor,hospital,0.6913,window2
+win2_dim50,cat,dog,0.8892,window2 lower than win5
+win2_dim50,car,automobile,0.8935,window2
+win2_dim50,king,queen,0.7827,window2
+win2_dim50,computer,banana,0.8122,window2 FAIL separates poorly
+win10_dim50,doctor,physician,0.9842,window10 highest synonym
+win10_dim50,doctor,hospital,0.6392,window10 related drops slightly
+win10_dim50,cat,dog,0.9752,window10
+win10_dim50,car,automobile,0.9799,window10
+win10_dim50,king,queen,0.7387,window10 drops
+win10_dim50,computer,banana,0.5205,window10 separates well
+dim100_win5,doctor,physician,0.9789,diminishing return vs dim50
+dim100_win5,doctor,hospital,0.7043,stable
+dim100_win5,cat,dog,0.9705,stable
+dim100_win5,car,automobile,0.9320,stable
+dim300_win5,doctor,physician,0.9804,no real gain over dim50 on small corpus
+dim300_win5,doctor,hospital,0.7152,stable
+dim300_win5,cat,dog,0.9793,slight gain
+dim300_win5,car,automobile,0.9355,slight gain
+analogy_win2,king-man+woman->queen,queen_rank4,0.7774,palace rank1 0.8184 FAIL-top1
+analogy_win5,king-man+woman->queen,queen_rank1,0.6235,palace rank2 0.5842 PASS-top1
+analogy_win10,king-man+woman->queen,queen_rank1,0.6182,palace rank2 0.6100 PASS-top1 marginal
+cooccur_w1,cat,dog,1.0000,identical context vectors
+cooccur_w2,cat,dog,0.8750,window2 dilutes identity
+cooccur_w5,cat,dog,0.8750,sentence-length saturates equals w2
